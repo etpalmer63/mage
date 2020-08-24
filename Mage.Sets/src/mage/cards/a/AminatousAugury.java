@@ -231,8 +231,9 @@ class AminatousAuguryCost extends CostImpl {
         }
 
         MageObject sourceObject = ability.getSourceObject(game);
+        Set<CardType>  castCardTypes = null;
         if (sourceObject!=null) {
-            Set<CardType> castCardTypes = sourceObject.getCardType();
+            castCardTypes = sourceObject.getCardType();
         } else {
             throw new UnsupportedOperationException("Mage source object returned null.");
         }
